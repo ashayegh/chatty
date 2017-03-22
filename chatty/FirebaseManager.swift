@@ -13,7 +13,7 @@ import FirebaseAuth
 
 class FirebaseManager: NSObject {
     // reference to database
-    static let databaseRed = FIRDatabase.database().reference()
+    static let databaseRef = FIRDatabase.database().reference()
     // current user id
     static var currentUserId:String = ""
     static var currentUser:FIRUser? = nil
@@ -32,6 +32,39 @@ class FirebaseManager: NSObject {
                 completion(true)
             }
         })
+        
+    }
+    
+    // new user
+    static func createAccount(email:String, password:String, username:String, completion:@escaping(_ result:String) -> Void) {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error)
+            in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            AddUser(username: username, email: email)
+            Login(email: email, password: password) {
+                (success:Bool) in
+                if(success) {
+                    print("Account created and logged in")
+                } else {
+                    print("Failed login after account creation")
+                }
+            }
+            completion("")
+        })
+    }
+    
+    // add user
+    static func AddUser(username:String, email:String) {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let post = ["uid":uid,
+                    "username":username,
+                    "email":email,
+                    "profileImageURL":""]
+        
+        databaseRef.child("Users").child("uid").setValue(post)
         
     }
 }

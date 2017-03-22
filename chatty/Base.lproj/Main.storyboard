@@ -233,6 +233,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2No-WU-pK7">
                                 <rect key="frame" x="16" y="411" width="343" height="30"/>
                                 <state key="normal" title="New account"/>
+                                <connections>
+                                    <action selector="newAccountClicked:" destination="XjL-yp-SQs" eventType="touchUpInside" id="Exj-Pk-vn7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,6 +258,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="email" destination="RsF-XJ-x1q" id="w2o-CZ-qFE"/>
+                        <outlet property="password" destination="TOD-hX-JUl" id="R3v-tj-vgg"/>
+                        <outlet property="username" destination="H4R-tz-hvm" id="6D4-tQ-QaK"/>
                         <segue destination="xXC-0g-E9f" kind="show" identifier="showProfile" id="d01-dX-fif"/>
                     </connections>
                 </viewController>

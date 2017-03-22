@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,15 +24,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func loginClicked(_ sender: Any) {
-        let email = "test1@gmail.com"
-        let password = "password"
+        //let email = "test1@gmail.com"
+        //let password = "password"
         
         // do login
-        FirebaseManager.Login(email: email, password: password) { (success:Bool) in
+        FirebaseManager.Login(email: email.text!, password: password.text!) { (success:Bool) in
             if(success) {
                 self.performSegue(withIdentifier: "showProfile", sender: sender)
             }
         }
+    }
+    @IBAction func newAccountClicked(_ sender: UIButton) {
+        FirebaseManager.createAccount(email: email.text!, password: password.text!, username: username.text!){
+            (result:String) in
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showProfile", sender: sender)
+            }
+        }
+        
     }
 
 }

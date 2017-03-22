@@ -41,7 +41,6 @@ class PostManager: NSObject {
                 }
             }
             completion("")
-            
         })
     }
 }
