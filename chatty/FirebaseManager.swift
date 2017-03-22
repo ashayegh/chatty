@@ -64,7 +64,7 @@ class FirebaseManager: NSObject {
                     "email":email,
                     "profileImageURL":""]
         
-        databaseRef.child("Users").child("uid").setValue(post)
+        databaseRef.child("users").child("uid").setValue(post)
         
     }
 }

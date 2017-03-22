@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "chatty/PostManager.swift"
-            timestampString = "511862997.871723"
+            timestampString = "511877509.947148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "fillPosts(uid:toId:completion:)"
             landmarkType = "7">
          </BreakpointContent>

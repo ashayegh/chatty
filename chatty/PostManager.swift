@@ -17,6 +17,25 @@ class PostManager: NSObject {
     // post manager (array of type post)
     static var posts = [Post]()
     
+    static func addPost(username:String, text:String, toId:String, fromId:String) {
+        let p = Post(username: username, text: text, toId: toId)
+        
+        // if message is not empty
+        if (p.text != "") {
+            //
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            
+            // post object for firebase
+            let post = ["uid":uid!,
+                        "username": p.username,
+                        "text":p.text,
+                        "toId":p.toId
+                        ]
+            databaseRef.child("posts").childByAutoId().setValue(post)
+            
+        }
+    }
+    
     // fill post
     static func fillPosts(uid:String?, toId:String, completion: @escaping(_ result:String) -> Void) {
         posts = []

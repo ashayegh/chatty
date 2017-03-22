@@ -15,6 +15,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var chatTable: UITableView!
     
+    @IBOutlet weak var userInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +53,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    @IBAction func sendClicked(_ sender: Any) {
+        PostManager.addPost(username: (selectedUser?.username)!, text: userInput.text!, toId: (selectedUser?.uid)!, fromId: (FirebaseManager.currentUser?.uid)!)
+        userInput.text = ""
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
