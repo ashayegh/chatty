@@ -58,7 +58,7 @@ class ProfileManager: NSObject {
                 // initialize the user
                 let u = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl)
                 
-                // add user to managet users array
+                // add user to users array
                 ProfileManager.users.append(u)
             }
             // call completion

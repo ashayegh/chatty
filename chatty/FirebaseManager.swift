@@ -19,7 +19,7 @@ class FirebaseManager: NSObject {
     static var currentUser:FIRUser? = nil
     
     // Function used to LOGIN (via email)
-    static func Login(email:String, password:String, completion: @escaping(_ _success:Bool) -> Void) {
+    static func Login(email:String, password:String, completion: @escaping(_ success:Bool) -> Void) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if let error = error {
@@ -64,7 +64,7 @@ class FirebaseManager: NSObject {
                     "email":email,
                     "profileImageURL":""]
         
-        databaseRef.child("users").child("uid").setValue(post)
+        databaseRef.child("users").child(uid!).setValue(post)
         
     }
 }
