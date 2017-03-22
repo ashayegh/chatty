@@ -42,7 +42,7 @@ class ProfileManager: NSObject {
         
         users = []
         // child -> chose a node: Users -> set objerver to wait for new node
-        dbref.child("Users").observe(.childAdded, with: {
+        dbref.child("users").observe(.childAdded, with: {
             // results come in snapshots
             snapshot in
             print(snapshot)
@@ -53,7 +53,7 @@ class ProfileManager: NSObject {
                 let uid = result["uid"]! as! String
                 let username = result["username"]! as! String
                 let email = result["email"]! as! String
-                let profileImageUrl = result["profileImageUrl"]! as! String
+                let profileImageUrl = result["profileImageURL"]! as! String
                 
                 // initialize the user
                 let u = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl)

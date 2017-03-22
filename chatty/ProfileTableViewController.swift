@@ -9,6 +9,8 @@
 import UIKit
 
 class ProfileTableViewController: UITableViewController {
+    
+    var selectedUser:User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,15 @@ class ProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //tableView.reloadData()
+        ProfileManager.fillUsers {
+            () in
+            // does blocking so users can be donwloaded be grabbed first
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,19 +45,26 @@ class ProfileTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return ProfileManager.users.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "test"
+        let u = ProfileManager.users[indexPath.row]
+        cell.textLabel?.text = u.username
 
         return cell
     }
-    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // get user
+        selectedUser = ProfileManager.users[indexPath.row]
+        
+        // perform segawy to chatView
+        performSegue(withIdentifier: "showChatView", sender: self)
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -82,14 +100,25 @@ class ProfileTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // check what segue is getting called
+        // if chatview
+        if segue.identifier == "showChatView",
+            // create a destination view controller to match the chat
+            let destinationViewController = segue.destination as? ChatViewController {
+            destinationViewController.selectedUser = selectedUser
+            
+            
+        } else if segue.identifier == "showSettingsView",
+            let destinationViewController = segue.destination as? SettingsViewController {
+            //destinationViewController.selectedUser = selectedUser
+        }
     }
-    */
+    
 
 }

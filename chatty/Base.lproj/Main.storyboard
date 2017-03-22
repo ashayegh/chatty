@@ -126,9 +126,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bYn-aC-4Bn"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -139,10 +136,13 @@
                     <navigationItem key="navigationItem" id="QkH-bm-LuB">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="E5T-2M-Ej8">
                             <connections>
-                                <segue destination="bkM-fI-6JU" kind="show" identifier="showSettings" id="iDa-Zj-W6j"/>
+                                <segue destination="bkM-fI-6JU" kind="show" identifier="showSettingsView" id="iDa-Zj-W6j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showChatView" id="bZf-Zg-NuF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFS-8e-Rod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

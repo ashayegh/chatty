@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func loginClicked(_ sender: Any) {
-        let email = "test2@gmail.com"
+        let email = "test1@gmail.com"
         let password = "password"
         
         // do login
