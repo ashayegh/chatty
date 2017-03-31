@@ -17,21 +17,25 @@ class PostManager: NSObject {
     // post manager (array of type post)
     static var posts = [Post]()
     
+    // adding a new post
     static func addPost(username:String, text:String, toId:String, fromId:String) {
+        // post object
         let p = Post(username: username, text: text, toId: toId)
         
         // if message is not empty
         if (p.text != "") {
-            //
+            // get user id
             let uid = FIRAuth.auth()?.currentUser?.uid
             
-            // post object for firebase
+            // set up post object for firebase
             let post = ["uid":uid!,
                         "username": p.username,
                         "text":p.text,
                         "toId":p.toId
-                        ]
-            databaseRef.child("posts").childByAutoId().setValue(post)
+            ]
+            
+         // send to firebase - ensure posts are unuque nodes
+         databaseRef.child("posts").childByAutoId().setValue(post)
             
         }
     }

@@ -11,7 +11,7 @@ import UIKit
 class ProfileTableViewController: UITableViewController {
     
     var selectedUser:User?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,10 +50,19 @@ class ProfileTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
         
         let u = ProfileManager.users[indexPath.row]
-        cell.textLabel?.text = u.username
+        //cell.textLabel?.text = u.username
+        cell.cellName.text = u.username
+        if u.profileImageUrl != "" {
+            // u.getprofileimage()
+        } else {
+            
+            // default image. goes in assets folder
+            //cell.cellImage.image =
+        }
+        //cell.textLabel?.text = u.username
 
         return cell
     }

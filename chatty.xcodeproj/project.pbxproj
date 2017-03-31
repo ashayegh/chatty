@@ -11,6 +11,7 @@
 		7302F6051E826A7A00068B20 /* chatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302F6041E826A7A00068B20 /* chatTableViewCell.swift */; };
 		7302F6071E8273C800068B20 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302F6061E8273C800068B20 /* User.swift */; };
 		7302F6091E82785600068B20 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302F6081E82785600068B20 /* ProfileManager.swift */; };
+		734719D31E83295900A2D904 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734719D21E83295900A2D904 /* ProfileTableViewCell.swift */; };
 		73E755071E822B7800779BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E755061E822B7800779BF7 /* AppDelegate.swift */; };
 		73E755091E822B7800779BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E755081E822B7800779BF7 /* ViewController.swift */; };
 		73E7550C1E822B7800779BF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E7550A1E822B7800779BF7 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		7302F6041E826A7A00068B20 /* chatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatTableViewCell.swift; sourceTree = "<group>"; };
 		7302F6061E8273C800068B20 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7302F6081E82785600068B20 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		734719D21E83295900A2D904 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		73E755031E822B7800779BF7 /* chatty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E755061E822B7800779BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E755081E822B7800779BF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				73E755061E822B7800779BF7 /* AppDelegate.swift */,
 				73E755081E822B7800779BF7 /* ViewController.swift */,
 				73EC9A071E8251940070CCA3 /* ProfileTableViewController.swift */,
+				734719D21E83295900A2D904 /* ProfileTableViewCell.swift */,
 				73EC9A091E8252350070CCA3 /* ChatViewController.swift */,
 				73EC9A0B1E82528C0070CCA3 /* SettingsViewController.swift */,
 				7302F6041E826A7A00068B20 /* chatTableViewCell.swift */,
@@ -259,6 +262,7 @@
 				7302F6051E826A7A00068B20 /* chatTableViewCell.swift in Sources */,
 				7302F6031E8262C000068B20 /* PostManager.swift in Sources */,
 				73E7550F1E822B7800779BF7 /* chatty.xcdatamodeld in Sources */,
+				734719D31E83295900A2D904 /* ProfileTableViewCell.swift in Sources */,
 				7302F6071E8273C800068B20 /* User.swift in Sources */,
 				73EC9A0C1E82528C0070CCA3 /* SettingsViewController.swift in Sources */,
 			);
@@ -387,6 +391,7 @@
 				CODE_SIGN_ENTITLEMENTS = chatty/chatty.entitlements;
 				DEVELOPMENT_TEAM = YJY3GTSU5J;
 				INFOPLIST_FILE = chatty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayegh.chatty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +407,7 @@
 				CODE_SIGN_ENTITLEMENTS = chatty/chatty.entitlements;
 				DEVELOPMENT_TEAM = YJY3GTSU5J;
 				INFOPLIST_FILE = chatty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayegh.chatty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
