@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6749DF291E8F200300D07F23 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6749DF281E8F200300D07F23 /* RemoteConfigManager.swift */; };
 		7302F6031E8262C000068B20 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302F6021E8262C000068B20 /* PostManager.swift */; };
 		7302F6051E826A7A00068B20 /* chatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302F6041E826A7A00068B20 /* chatTableViewCell.swift */; };
 		7302F6071E8273C800068B20 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302F6061E8273C800068B20 /* User.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		3B043CB8C3F6D989EE723976 /* Pods-chatty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatty/Pods-chatty.debug.xcconfig"; sourceTree = "<group>"; };
+		6749DF281E8F200300D07F23 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		7302F6021E8262C000068B20 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		7302F6041E826A7A00068B20 /* chatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatTableViewCell.swift; sourceTree = "<group>"; };
 		7302F6061E8273C800068B20 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				7302F6021E8262C000068B20 /* PostManager.swift */,
 				7302F6061E8273C800068B20 /* User.swift */,
 				7302F6081E82785600068B20 /* ProfileManager.swift */,
+				6749DF281E8F200300D07F23 /* RemoteConfigManager.swift */,
 			);
 			path = chatty;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				73EC9A0E1E825D250070CCA3 /* FirebaseManager.swift in Sources */,
 				7302F6091E82785600068B20 /* ProfileManager.swift in Sources */,
 				73EC9A081E8251940070CCA3 /* ProfileTableViewController.swift in Sources */,
+				6749DF291E8F200300D07F23 /* RemoteConfigManager.swift in Sources */,
 				73EC9A0A1E8252350070CCA3 /* ChatViewController.swift in Sources */,
 				7302F6051E826A7A00068B20 /* chatTableViewCell.swift in Sources */,
 				7302F6031E8262C000068B20 /* PostManager.swift in Sources */,

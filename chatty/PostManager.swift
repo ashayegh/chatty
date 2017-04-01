@@ -46,7 +46,6 @@ class PostManager: NSObject {
         let allPost = databaseRef.child("posts")
         print(allPost)
         let post = databaseRef.child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUser?.uid).observe(.childAdded, with: {
-            
             snapshot in
             print(snapshot)
         })

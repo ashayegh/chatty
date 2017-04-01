@@ -13,12 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBAction func testbtn(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        RemoteConfigManager.remoteConfigInit(firstControl: self.loginButton)
     }
 
     override func didReceiveMemoryWarning() {

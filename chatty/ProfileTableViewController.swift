@@ -56,11 +56,10 @@ class ProfileTableViewController: UITableViewController {
         //cell.textLabel?.text = u.username
         cell.cellName.text = u.username
         if u.profileImageUrl != "" {
-            // u.getprofileimage()
+            cell.cellImage.image = u.getProfileImage()
         } else {
-            
             // default image. goes in assets folder
-            //cell.cellImage.image =
+            cell.cellImage.image = #imageLiteral(resourceName: "profile")
         }
         //cell.textLabel?.text = u.username
 
@@ -125,7 +124,7 @@ class ProfileTableViewController: UITableViewController {
             
         } else if segue.identifier == "showSettingsView",
             let destinationViewController = segue.destination as? SettingsViewController {
-            //destinationViewController.selectedUser = selectedUser
+            destinationViewController.selectedUser = ProfileManager.getCurrentUser(uid: FirebaseManager.currentUserId)
         }
     }
     
